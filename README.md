@@ -1,7 +1,3 @@
-<p align="center">
-<img src="https://readme-typing-svg.herokuapp.com?color=%2336BCF7&center=true&vCenter=true&lines=S+C+R+I+P+T++V+A+L+L+++S+T+O+R+E+E" />
-</p>
-
 ## UPGRADE FOR DEBIAN
 Masukkan perintah dibawah jika anda menggunakan OS Debian Version 9 atau 10
 ```
@@ -23,7 +19,7 @@ apt install -y && apt update -y && apt upgrade -y && wget -q https://raw.githubu
 ## UPDATE SCRIPT
 Masukkan perintah dibawah jika terdapat informasi pembaruan Script untuk versi yang akan datang
 ```
-wget -q https://raw.githubusercontent.com/ovva123/Autoscript/GM/ubu20-deb10-stable.sh && chmod +x update.sh && ./update.sh
+wget -q https://raw.githubusercontent.com/lujake389/huy/main/ubu20-deb10-stable.sh && chmod +x update.sh && ./update.sh
 ```
 ## FIX BUG ATASI HAPROXY EROR
 Masukkan perintah dibawah jika terdapat eror pada satus haproxy
