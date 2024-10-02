@@ -25,10 +25,9 @@ clear;clear;clear
 
 # // Banner
 echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "  Developer » JAVA࿐${YELLOW}(${NC}${green} Stable Edition ${NC}${YELLOW})${NC}"
-echo -e "  » This Will Quick Setup VPN Server On Your Server"
-echo -e "  Pembuat : ${green}Vallstore࿐® ${NC}"
-echo -e "  ©NO COPY SCRIP MEMEK TEMBEM࿐ ${YELLOW}(${NC} 2024 ${YELLOW})${NC}"
+echo -e "  ผู้พัฒนา » JAVA࿐${YELLOW}(${NC}${green} เวอร์ชั่นใหม่ ${NC}${YELLOW})${NC}" 
+echo -e "  » เวอร์ชั่นใหม่จะใช้เวลาในการติดตั้งที่เร็วขึ้น" 
+echo -e "  ©ห้ามเอาไปขายหรือใช้ในทางที่ผิด ${YELLOW}(${NC} 2024 ${YELLOW})${NC}" 
 echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
 sleep 2
@@ -234,19 +233,19 @@ clear
 function pasang_domain() {
 echo -e ""
 clear
+eecho -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo -e " \e[1;32mโปรดเลือกประเภทโดเมนด้านล่าง \e[0m"
 echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo -e " \e[1;32mPlease Select a Domain Type Below \e[0m"
+echo -e " \e[1;32m1)\e[0m ใช้โดเมนของคุณเอง (แนะนำ)"
+echo -e " \e[1;32m2)\e[0m ใช้โดเมนของสคริป"
 echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo -e " \e[1;32m1)\e[0m Menggunakan Domain Sendiri (Recommended)"
-echo -e " \e[1;32m2)\e[0m Menggunakan Domain Random"
-echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-read -p " Please select numbers 1-2 or Any Button(Random) : " host
+read -p " โปรดเลือกหมายเลข 1-2 หรือปุ่มใดก็ได้ (สุ่ม) : " host
 echo ""
 if [[ $host == "1" ]]; then
-echo -e " \e[1;32mPlease Enter Your Subdomain $NC"
+echo -e " \e[1;32mโปรดใส่โดเมนของคุณ $NC"
 echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo -e ""
-read -p " Masukan Domain : " host1
+read -p " ใส่โดเมน : " host1
 echo -e ""
 echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "IP=" >> /var/lib/kyt/ipvps.conf
@@ -311,8 +310,10 @@ TIMES="10"
 CHATID="5747562905"
 KEY="7422462630:AAEYpTcELKBDiKwztS6F1g9C_TD8HHYmHKM"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
-    TIMEZONE=$(printf '%(%H:%M:%S)T')
-    TEXT="
+
+# Gather time and date information
+TIMEZONE=$(printf '%(%H:%M:%S)T')
+TEXT="
 <code>━━━━━━━━━━━━━━━━━━━━━━━━━</code>
 <b>PREMIUM AUTOSCRIPT</b>
 <code>━━━━━━━━━━━━━━━━━━━━━━━━━</code>
@@ -326,10 +327,14 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
 <code>━━━━━━━━━━━━━━━━━━━━━━━━━</code>
 <b>JAVA࿐</b>
 <code>━━━━━━━━━━━━━━━━━━━━━━━━━</code>
-<i>Automatic Notifications From Github</i>
-"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"https://t.me/zeat1}]]}' 
+<i>Automatic Notifications From Github</i>"
 
-    curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
+# Fixed reply_markup structure
+reply_markup='{"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"https://t.me/zeat1"}]]}'
+
+# Send the message using curl
+curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html&reply_markup=$reply_markup" $URL >/dev/null
+}
 }
 clear
 # Pasang SSL
