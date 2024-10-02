@@ -335,7 +335,6 @@ reply_markup='{"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"https://t.me/z
 # Send the message using curl
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html&reply_markup=$reply_markup" $URL >/dev/null
 }
-}
 clear
 # Pasang SSL
 function pasang_ssl() {
